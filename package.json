@@ -4,8 +4,8 @@
   "private": true,
   "description": "ManuscriptReady — Academic Editing & APA 7th Formatting",
   "scripts": {
-    "test": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs",
-    "verify": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs"
+    "test": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs && node scripts/verify-phase5.mjs",
+    "verify": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs && node scripts/verify-phase5.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.4"

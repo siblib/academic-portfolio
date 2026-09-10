@@ -132,6 +132,16 @@ section[id] {
   text-align: center;
 }
 
+.drawer[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 769px) {
+  .drawer {
+    display: none !important;
+  }
+}
+
 .drawer nav {
   display: flex;
   flex-direction: column;

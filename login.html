@@ -4,15 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Log In — ManuscriptReady Client Portal</title>
+  <meta name="description" content="Sign in to your ManuscriptReady client portal to track editorial projects, view milestones, and download formatted manuscripts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
-  <main class="container">
-    <!-- Login portal lands here in Phase 5 -->
+  <main class="auth-wrap">
+    <form id="login-form" class="auth-card">
+      <a href="/" class="wordmark">Manuscript<span>Ready</span></a>
+      <p class="eyebrow">Client Portal</p>
+      <h1>Log in</h1>
+
+      <label for="login-email">Email</label>
+      <input class="input" type="email" id="login-email" autocomplete="email" required placeholder="scholar@university.edu">
+
+      <label for="login-password">Password</label>
+      <input class="input" type="password" id="login-password" autocomplete="current-password" required placeholder="••••••••">
+
+      <button class="btn btn-primary" type="submit">Log in</button>
+      <p id="login-status" class="auth-status" role="status" aria-live="polite"></p>
+
+      <p class="auth-alt">New here? <a href="/register">Create an account</a></p>
+      <p class="auth-alt"><a href="/">← Back to main site</a></p>
+    </form>
   </main>
-  <script type="module" src="/js/supabase-client.js"></script>
+
+  <script type="module" src="/js/auth.js"></script>
 </body>
 </html>

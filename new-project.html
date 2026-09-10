@@ -3,16 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Project — ManuscriptReady Client Portal</title>
+  <title>Submit Project — ManuscriptReady Client Portal</title>
+  <meta name="description" content="Submit a new academic manuscript for APA 7 formatting, line editing, or literature review structuring.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
-  <main class="container">
-    <!-- New project upload lands here in Phase 5 -->
+  <!-- Portal Header -->
+  <header class="portal-header">
+    <div class="container nav-wrap">
+      <a href="/" class="wordmark">Manuscript<span>Ready</span></a>
+      <div class="portal-user">
+        <span class="text-muted" id="user-email"></span>
+        <button id="logout-btn" class="btn btn-secondary">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container container-narrow">
+    <!-- Structural Flash Prevention Wrapper -->
+    <div id="portal" hidden class="project-form-wrap">
+      <a href="/dashboard" class="btn btn-ghost" style="margin-bottom: var(--space-4);">← Back to dashboard</a>
+      
+      <h1>Submit a new project</h1>
+      <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Upload your manuscript draft. We will evaluate word count, citation count, and style requirements to confirm your quote within 24 hours.</p>
+
+      <form id="new-project-form" class="project-form">
+        <label for="np-title">Manuscript title *</label>
+        <input class="input" id="np-title" required maxlength="200" placeholder="e.g. Chapter 3: Methodology and Findings">
+
+        <label for="np-service">Service needed *</label>
+        <select class="select" id="np-service" required>
+          <option value="formatting">APA 7th Formatting</option>
+          <option value="editing">Comprehensive Editing</option>
+          <option value="lit_review">Literature Review Structuring</option>
+          <option value="coaching">Research Coaching</option>
+        </select>
+
+        <label for="np-words">Word count <span style="font-weight: 400; color: var(--text-muted);">(for quoting estimate)</span></label>
+        <input class="input" type="number" id="np-words" min="100" step="1" placeholder="e.g. 8500">
+
+        <label id="dz-label">Manuscript file *</label>
+        <div id="dropzone" class="dropzone" data-state="idle" tabindex="0" role="button" aria-labelledby="dz-label">
+          <span class="dz-icon" aria-hidden="true">⬆</span>
+          <span class="dz-text">Drag &amp; drop your .docx or .pdf here — or <strong>browse files</strong>.<br>Max 25&nbsp;MB. Upload the editable .docx — PDFs are accepted as reference copies only.</span>
+          <input type="file" id="manuscriptFile" accept=".doc,.docx,.pdf" hidden>
+        </div>
+        <p id="dz-status" class="dz-status" role="status" aria-live="polite"></p>
+
+        <button class="btn btn-primary" type="submit">Submit for review</button>
+        <p id="form-status" class="auth-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- Pre-auth loader to avoid flash of content -->
+    <p id="portal-loading" class="portal-loading">Checking your session…</p>
   </main>
-  <script type="module" src="/js/supabase-client.js"></script>
+
+  <script type="module" src="/js/dashboard.js"></script>
 </body>
 </html>

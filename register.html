@@ -4,15 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Account — ManuscriptReady Client Portal</title>
+  <meta name="description" content="Create a ManuscriptReady client account to upload research manuscripts, track APA 7 formatting progress, and download completed documents.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
-  <main class="container">
-    <!-- Registration portal lands here in Phase 5 -->
+  <main class="auth-wrap">
+    <form id="register-form" class="auth-card">
+      <a href="/" class="wordmark">Manuscript<span>Ready</span></a>
+      <p class="eyebrow">Client Portal</p>
+      <h1>Create an account</h1>
+
+      <label for="reg-name">Full Name</label>
+      <input class="input" type="text" id="reg-name" autocomplete="name" required placeholder="Dr. Jane Smith">
+
+      <label for="reg-email">Academic / Institutional Email</label>
+      <input class="input" type="email" id="reg-email" autocomplete="email" required placeholder="scholar@university.edu">
+
+      <label for="reg-password">Password (minimum 6 characters)</label>
+      <input class="input" type="password" id="reg-password" autocomplete="new-password" required minlength="6" placeholder="••••••••">
+
+      <button class="btn btn-primary" type="submit">Create account</button>
+      <p id="register-status" class="auth-status" role="status" aria-live="polite"></p>
+
+      <p class="auth-alt">Already have an account? <a href="/login">Log in</a></p>
+      <p class="auth-alt"><a href="/">← Back to main site</a></p>
+    </form>
   </main>
-  <script type="module" src="/js/supabase-client.js"></script>
+
+  <script type="module" src="/js/auth.js"></script>
 </body>
 </html>
