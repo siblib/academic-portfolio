@@ -1,0 +1,10 @@
+{
+  "name": "academic-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ManuscriptReady — Academic Editing & APA 7th Formatting",
+  "scripts": {
+    "test": "node scripts/verify-setup.js",
+    "verify": "node scripts/verify-setup.js"
+  }
+}
