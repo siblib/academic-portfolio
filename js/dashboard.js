@@ -92,6 +92,30 @@ if (projectsTbody) {
   if (portal) portal.hidden = false;
   $('#portal-loading')?.remove();
 
+  const usd = (n) =>
+    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(n) || 0);
+
+  function toast(msg, type = 'info') {
+    const el = document.createElement('div');
+    el.className = `toast toast-${type}`;
+    el.setAttribute('role', 'status');
+    el.textContent = msg;
+    document.body.append(el);
+    setTimeout(() => el.remove(), 6000);
+  }
+
+  // Handle returning from Stripe checkout redirect
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('payment') === 'success') {
+    toast('Payment received — your status will update momentarily.', 'success');
+    history.replaceState({}, '', '/dashboard');
+  } else if (params.get('payment') === 'cancelled') {
+    toast('Payment cancelled — your invoice remains open.', 'info');
+    history.replaceState({}, '', '/dashboard');
+  }
+
+  let currentProjects = [];
+
   function rowHTML(p) {
     const meta = STATUS_META[p.status] ?? STATUS_META.submitted;
     const due = p.due_date
@@ -102,20 +126,26 @@ if (projectsTbody) {
         })
       : '—';
 
-    const files = (p.status === 'completed' && p.final_file_url)
-      ? `<button class="btn btn-ghost" data-download="${esc(p.final_file_url)}" title="Download completed manuscript">⬇ Final .docx</button>`
-      : `<span class="badge badge-submitted">⬆ Received</span>`;
+    let filesCell = `<span class="badge badge-submitted">⬆ Received</span>`;
+    if (p.status === 'completed' && p.final_file_url) {
+      filesCell = `<button class="btn btn-ghost" data-download="${esc(p.final_file_url)}" title="Download completed manuscript">⬇ Final .docx</button>`;
+    } else if (p.status === 'awaiting_payment') {
+      filesCell = p.paid
+        ? `<span class="badge badge-editing">✓ Paid — in progress</span>`
+        : `<button class="btn btn-primary" data-pay="${p.id}">Pay ${usd(p.amount_due)}</button>`;
+    }
 
     return `<tr>
       <td data-label="Project"><strong>${esc(p.title)}</strong></td>
       <td data-label="Service">${SERVICE_LABELS[p.service_type] ?? esc(p.service_type)}</td>
       <td data-label="Due">${due}</td>
       <td data-label="Status"><span class="badge ${meta.cls}">${meta.label}</span></td>
-      <td data-label="Files">${files}</td>
+      <td data-label="Files">${filesCell}</td>
     </tr>`;
   }
 
   function renderProjects(rows) {
+    currentProjects = rows || [];
     if (!rows || rows.length === 0) {
       if (emptyState) emptyState.hidden = false;
       if (projectsTableWrap) projectsTableWrap.hidden = true;
@@ -145,7 +175,7 @@ if (projectsTbody) {
   // Initial load
   await loadProjects();
 
-  // Realtime subscription (Objective 5.4)
+  // Realtime subscription (Objective 5.4 & 6.2)
   // Subscribes to changes on the projects table for the authenticated user
   supabase
     .channel(`projects-${user.id}`)
@@ -189,6 +219,66 @@ if (projectsTbody) {
     } finally {
       btn.disabled = false;
       btn.textContent = originalText;
+    }
+  });
+
+  // Pay Now Modal flow (Objective 6.2)
+  const payModal = $('#pay-modal');
+  let payTarget = null;
+
+  projectsTbody.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-pay]');
+    if (!btn) return;
+
+    payTarget = currentProjects.find((p) => p.id === btn.dataset.pay);
+    if (!payTarget) return;
+
+    const projEl = $('#pay-project');
+    const servEl = $('#pay-service');
+    const amtEl = $('#pay-amount');
+
+    if (projEl) projEl.textContent = payTarget.title;
+    if (servEl) servEl.textContent = SERVICE_LABELS[payTarget.service_type] ?? '—';
+    if (amtEl) amtEl.textContent = usd(payTarget.amount_due);
+
+    if (payModal) payModal.showModal();
+  });
+
+  $('#pay-cancel')?.addEventListener('click', () => payModal?.close());
+  payModal?.addEventListener('click', (e) => {
+    if (e.target === payModal) payModal.close(); // Backdrop click dismissal
+  });
+
+  $('#pay-confirm')?.addEventListener('click', async () => {
+    const confirmBtn = $('#pay-confirm');
+    if (!confirmBtn || !payTarget) return;
+
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = 'Redirecting to Stripe…';
+
+    try {
+      const { data: { session: currentSession } } = await supabase.auth.getSession();
+      const token = currentSession?.access_token;
+
+      const res = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ projectId: payTarget.id }), // Server derives amount
+      });
+
+      const payload = await res.json();
+      if (!res.ok || !payload.url) {
+        throw new Error(payload.error || 'Checkout initiation failed');
+      }
+
+      window.location.href = payload.url;
+    } catch (err) {
+      confirmBtn.disabled = false;
+      confirmBtn.textContent = 'Continue to Stripe';
+      toast(err.message || 'Payment initiation failed', 'error');
     }
   });
 }

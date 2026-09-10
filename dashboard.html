@@ -55,6 +55,22 @@
           <a href="/new-project" class="btn btn-primary">Submit your first manuscript</a>
         </div>
       </section>
+
+      <!-- Invoice & Pay Now Confirmation Modal (Objective 6.2) -->
+      <dialog id="pay-modal" class="pay-modal" aria-labelledby="pay-title">
+        <p class="eyebrow">Invoice</p>
+        <h2 id="pay-title">Confirm payment</h2>
+        <dl class="invoice-lines">
+          <div><dt>Project</dt><dd id="pay-project">—</dd></div>
+          <div><dt>Service</dt><dd id="pay-service">—</dd></div>
+          <div class="invoice-total"><dt>Amount due</dt><dd id="pay-amount">—</dd></div>
+        </dl>
+        <p class="invoice-note">Secure checkout powered by Stripe (Credit/Debit, Apple Pay, Google Pay). Your project status updates automatically once payment clears.</p>
+        <div class="pay-actions">
+          <button type="button" class="btn btn-secondary" id="pay-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="pay-confirm">Continue to Stripe</button>
+        </div>
+      </dialog>
     </div>
 
     <!-- Pre-auth loader to avoid flash of content -->
