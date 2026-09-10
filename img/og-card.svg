@@ -1,0 +1,30 @@
+
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="background:#0A192F; font-family:'Inter', -apple-system, sans-serif;">
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="#16283F" stroke="#1E293B" stroke-width="2"/>
+  
+  <text x="100" y="140" fill="#059669" font-size="16" font-weight="700" letter-spacing="3">ACADEMIC EDITING · APA 7TH SPECIALIST</text>
+  <text x="100" y="220" font-family="'Merriweather', Georgia, serif" font-size="46" font-weight="900" fill="#FFFFFF">ManuscriptReady</text>
+  <text x="100" y="280" font-family="'Merriweather', Georgia, serif" font-size="28" font-weight="700" fill="#E2E8F0">Your manuscript, journal-submission ready.</text>
+  
+  <text x="100" y="350" font-size="18" fill="#94A3B8">
+    APA 7th manuscript formatting, comprehensive academic editing, and literature review structuring.
+  </text>
+  <text x="100" y="380" font-size="18" fill="#94A3B8">
+    48-hour express turnaround · 14-day revision guarantee · 100% confidential.
+  </text>
+
+  <!-- Metrics row -->
+  <line x1="100" y1="430" x2="1100" y2="430" stroke="#334155" stroke-width="1"/>
+  
+  <text x="100" y="480" font-family="'Merriweather', serif" font-size="32" font-weight="900" fill="#059669">100+</text>
+  <text x="100" y="510" font-size="14" fill="#CBD5E1">Manuscripts Formatted</text>
+
+  <text x="360" y="480" font-family="'Merriweather', serif" font-size="32" font-weight="900" fill="#059669">48 hr</text>
+  <text x="360" y="510" font-size="14" fill="#CBD5E1">Express Turnaround</text>
+
+  <text x="620" y="480" font-family="'Merriweather', serif" font-size="32" font-weight="900" fill="#059669">14 days</text>
+  <text x="620" y="510" font-size="14" fill="#CBD5E1">Revision Window</text>
+
+  <text x="880" y="480" font-family="'Merriweather', serif" font-size="32" font-weight="900" fill="#059669">100%</text>
+  <text x="880" y="510" font-size="14" fill="#CBD5E1">Strictly Confidential</text>
+</svg>

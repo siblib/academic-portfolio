@@ -3,18 +3,521 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ManuscriptReady — Academic Editing &amp; APA 7th Formatting</title>
-  <meta name="description" content="Professional academic editing and APA 7th manuscript formatting for researchers, doctoral candidates, and faculty.">
+  <title>APA 7 Formatting &amp; Academic Editing — ManuscriptReady</title>
+  <meta name="description" content="APA 7th manuscript formatting, academic editing, and literature review structuring. 48-hr express turnaround, 14-day revisions, full confidentiality.">
+  <link rel="canonical" href="https://yourdomain.vercel.app/">
+  <meta property="og:title" content="ManuscriptReady — APA 7 Formatting &amp; Academic Editing">
+  <meta property="og:description" content="Your manuscript, journal-submission ready.">
+  <meta property="og:image" content="/img/og-card.png">
+
+  <!-- Preconnect and Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Style Tokens and Landing Page CSS -->
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/landing.css">
 </head>
 <body>
-  <main class="container">
-    <!-- Landing content lands here in Phase 4 -->
+  <!-- Accessibility Skip Link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header & Sticky Navigation (Objective 4.1) -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="/" class="wordmark">Manuscript<span>Ready</span></a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="/login" class="btn btn-primary nav-cta">Client Portal</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-Screen Mobile Drawer Navigation (Objective 4.1) -->
+  <div id="mobile-drawer" class="drawer" hidden>
+    <nav aria-label="Mobile Navigation">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="/login" class="drawer-cta">Client Portal</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- Hero Section & Proof Metrics (Objective 4.2) -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Academic Editing · APA 7th Specialist</p>
+        <h1>Your manuscript, journal-submission ready.</h1>
+        <p class="hero-sub">Precision line editing and APA 7th formatting for doctoral candidates and faculty researchers facing high-stakes journal or committee review. Rigorous citation reconciliation, flawless heading hierarchy, and zero scope ambiguity.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get a Quote</a>
+          <a href="#portfolio" class="btn btn-hero-ghost">See the transformation ↓</a>
+        </div>
+        <dl class="metrics" aria-label="Key Service Metrics">
+          <div class="metric">
+            <dd>100+</dd>
+            <dt>Manuscripts formatted to APA 7</dt>
+          </div>
+          <div class="metric">
+            <dd>48 hr</dd>
+            <dt>Express turnaround available</dt>
+          </div>
+          <div class="metric">
+            <dd>14 days</dd>
+            <dt>Revision window, 2 rounds</dt>
+          </div>
+          <div class="metric">
+            <dd>100%</dd>
+            <dt>Confidential — NDA on request</dt>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Services & Transparent Pricing Grid (Objective 4.3) -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Services</p>
+          <h2>Four ways I make your manuscript submission-ready</h2>
+          <p>Every package has transparent inclusions, clear scope boundaries, and fixed-quote pricing to eliminate surprises.</p>
+        </div>
+        <div class="services-grid">
+          <!-- Package 1: APA 7th Manuscript Formatting -->
+          <article class="service-card">
+            <div class="service-header">
+              <span class="service-badge">Flagship Package</span>
+              <h3>APA 7th Manuscript Formatting</h3>
+              <p class="one-liner">Your manuscript, journal-submission ready.</p>
+            </div>
+            <ul class="includes">
+              <li>Title page (professional or student format) and page numbering</li>
+              <li>Complete heading hierarchy standardized (Levels 1–5)</li>
+              <li>Every in-text citation cross-reconciled against the reference list</li>
+              <li>Reference list cleanup: hanging indents, alphabetical sorting, DOI-as-URL format, italics</li>
+              <li>APA 7 compliant tables, figures, and statistical reporting formatting</li>
+              <li>Final QA pass, dual delivery in editable .docx (tracked + clean) + PDF</li>
+            </ul>
+            <p class="excluded">Not included: Content rewriting, fact-checking whether cited sources support claims.</p>
+            <div class="pricing-row">
+              <span class="pricing-basis">Per page or reference count — quote in 24 hrs</span>
+              <a href="#contact" class="btn btn-ghost">Get Quote →</a>
+            </div>
+          </article>
+
+          <!-- Package 2: Comprehensive Academic Editing -->
+          <article class="service-card">
+            <div class="service-header">
+              <span class="service-badge">Line Polish</span>
+              <h3>Comprehensive Academic Editing</h3>
+              <p class="one-liner">Line-level polish that preserves your voice.</p>
+            </div>
+            <ul class="includes">
+              <li>Line editing for sentence syntax, academic tone, cadence, and scholarly clarity</li>
+              <li>Terminology and conceptual consistency across Methods, Results, and Discussion</li>
+              <li>Tracked-changes document showing every modification + clean submission copy</li>
+              <li>1-page editorial summary memo detailing top 5 recurring patterns + actionable fixes</li>
+              <li>Compliance check against target journal author guidelines and style sheet</li>
+            </ul>
+            <p class="excluded">Not included: Restructuring fundamental research arguments, adding content, verifying empirical claims.</p>
+            <div class="pricing-row">
+              <span class="pricing-basis">Per word ($0.03–$0.08/word) — quote in 24 hrs</span>
+              <a href="#contact" class="btn btn-ghost">Get Quote →</a>
+            </div>
+          </article>
+
+          <!-- Package 3: Literature Review Structuring -->
+          <article class="service-card">
+            <div class="service-header">
+              <span class="service-badge">Synthesis &amp; Flow</span>
+              <h3>Literature Review Structuring</h3>
+              <p class="one-liner">From source summary to thematic synthesis.</p>
+            </div>
+            <ul class="includes">
+              <li>Cross-study synthesis matrix (spreadsheet organizing studies by theme and methodology)</li>
+              <li>Thematic categorization outline and paragraph-level organization map</li>
+              <li>Transition and cohesion edits across the entire review chapter</li>
+              <li>Explicit research gap summary leading directly into dissertation research questions</li>
+              <li>Identifies source saturation, thematic overlap, and conceptual blindspots</li>
+            </ul>
+            <p class="excluded">Not included: Writing original review sections or fabricating source connections.</p>
+            <div class="pricing-row">
+              <span class="pricing-basis">Flat project rate — quote in 24 hrs</span>
+              <a href="#contact" class="btn btn-ghost">Get Quote →</a>
+            </div>
+          </article>
+
+          <!-- Package 4: Research Coaching -->
+          <article class="service-card">
+            <div class="service-header">
+              <span class="service-badge">Strategic Guidance</span>
+              <h3>Research Coaching</h3>
+              <p class="one-liner">A second brain for your manuscript timeline.</p>
+            </div>
+            <ul class="includes">
+              <li>60-minute 1-on-1 video strategy sessions on manuscript progression</li>
+              <li>Targeted session recap notes with prioritized action items and milestone targets</li>
+              <li>Async email support with a 48-hour response window between sessions</li>
+              <li>Flexible tiers: Single session / 4-session month / Manuscript accompaniment retainer</li>
+              <li>Advisor feedback interpretation and committee revision roadmapping</li>
+            </ul>
+            <p class="excluded">Not included: Writing any manuscript content (strictly adheres to academic ethics clause).</p>
+            <div class="pricing-row">
+              <span class="pricing-basis">Per session or retainer — quote in 24 hrs</span>
+              <a href="#contact" class="btn btn-ghost">Get Quote →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio & Case Studies Section (Objective 4.4) -->
+    <section id="portfolio" class="section section-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow">Before &amp; After</p>
+          <h2>Proven transformations on high-stakes academic manuscripts</h2>
+          <p>Explore real transformation patterns from doctoral dissertations and peer-reviewed journal submissions.</p>
+        </div>
+
+        <!-- Interactive Before/After Comparison Slider -->
+        <div class="ba-container">
+          <div class="ba-slider" role="region" aria-label="Interactive Before and After APA 7 comparison slider">
+            <img src="/img/case-a-before.webp" width="1200" height="800"
+                 alt="Demonstration excerpt of manuscript draft with citation errors, missing hanging indents, and outdated APA 6 formatting">
+            <img src="/img/case-a-after.webp" width="1200" height="800" class="ba-after"
+                 alt="Demonstration excerpt of same manuscript formatted to APA 7th edition with clean 0.5-inch hanging indents, live DOI URLs, and verified author citations">
+            <div class="ba-handle" aria-hidden="true"></div>
+            <span class="ba-label ba-label-before">Before</span>
+            <span class="ba-label ba-label-after">After</span>
+            <input type="range" min="0" max="100" value="50" class="ba-range"
+                   aria-label="Drag slider to reveal the APA 7 formatted transformation">
+          </div>
+          <p class="ba-caption">Drag the slider or use left/right arrow keys to compare unformatted draft vs. APA 7 submission-ready output (demonstration sample).</p>
+        </div>
+
+        <!-- 3 Anonymized Case Studies -->
+        <div class="case-studies-grid">
+          <!-- Case Study A: Formatting Rescue -->
+          <article class="case-study-card">
+            <h3>APA 7 Formatting for a Public Health Dissertation Chapter</h3>
+            <div class="stats-bar">
+              <span class="stats-pill">42 pages</span>
+              <span class="stats-pill">48-hr express</span>
+              <span class="stats-pill">186 references reconciled</span>
+            </div>
+            <div class="case-narrative">
+              <h4>The Challenge</h4>
+              <p>A doctoral candidate facing an immediate committee submission deadline had citations out of sync with the reference list, outdated APA 6 DOI/publisher formatting, and non-compliant student headers.</p>
+              <h4>What I Did</h4>
+              <ul>
+                <li>Reconciled all 186 in-text citations against the reference bibliography</li>
+                <li>Standardized DOIs to clean <code>https://doi.org/...</code> URLs and eliminated publisher locations</li>
+                <li>Applied Level 1–5 heading hierarchy and table notes formatting</li>
+                <li>Delivered tracked-changes .docx, clean copy, and submission-ready PDF</li>
+              </ul>
+            </div>
+            <div class="case-outcome">
+              <p>✓ Accepted for submission with zero formatting revisions requested.</p>
+            </div>
+            <p class="case-quote">— PhD candidate, Nursing &amp; Public Health</p>
+          </article>
+
+          <!-- Case Study B: Editing Transformation -->
+          <article class="case-study-card">
+            <h3>Comprehensive Line Editing for a Clinical Psychology Journal Manuscript</h3>
+            <div class="stats-bar">
+              <span class="stats-pill">7,500 words</span>
+              <span class="stats-pill">3-day turnaround</span>
+              <span class="stats-pill">1-page editorial memo</span>
+            </div>
+            <div class="case-narrative">
+              <h4>The Challenge</h4>
+              <p>Sound empirical research obscured by heavy passive voice, nested nominalizations, and repetitive academic prose that risked desk rejection from journal reviewers.</p>
+              <h4>What I Did</h4>
+              <ul>
+                <li>Polished line syntax, eliminated jargon redundancy, and strengthened active scholarly verbs</li>
+                <li>Standardized clinical diagnostic terminology across Methods and Discussion</li>
+                <li>Prepared clean copy and tracked-changes file highlighting key structural changes</li>
+                <li>Authored 1-page editorial diagnostic memo summarizing top 5 recurring patterns</li>
+              </ul>
+            </div>
+            <div class="case-outcome">
+              <p>✓ Passed peer review editorial checks and successfully published in target journal.</p>
+            </div>
+            <p class="case-quote">— Associate Professor, Behavioral Sciences</p>
+          </article>
+
+          <!-- Case Study C: Lit Review Restructure -->
+          <article class="case-study-card">
+            <h3>Literature Review Structuring for an Educational Leadership Dissertation</h3>
+            <div class="stats-bar">
+              <span class="stats-pill">35 pages</span>
+              <span class="stats-pill">5-day turnaround</span>
+              <span class="stats-pill">12-column synthesis matrix</span>
+            </div>
+            <div class="case-narrative">
+              <h4>The Challenge</h4>
+              <p>Chapter read as an unlinked, sequential catalog of author summaries ("Smith noted... Jones argued...") lacking theoretical scaffolding and conceptual synthesis.</p>
+              <h4>What I Did</h4>
+              <ul>
+                <li>Synthesized 64 empirical studies into a matrix organized by core thematic pillars</li>
+                <li>Overhauled paragraph transitions to contrast findings and methodologies rather than authors</li>
+                <li>Framed an explicit research gap leading directly into the dissertation questions</li>
+                <li>Refined conceptual flow to align seamlessly with Chapter 3 methodology</li>
+              </ul>
+            </div>
+            <div class="case-outcome">
+              <p>✓ Approved by dissertation committee on first review without structural rewrites.</p>
+            </div>
+            <p class="case-quote">— EdD Candidate, Educational Leadership</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process & Terms Section (Objective 1.3 / Phase 4) -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="eyebrow">Process &amp; Safeguards</p>
+          <h2>How we work: from submission to flawless delivery</h2>
+          <p>A predictable, four-step workflow backed by binding service-level commitments and academic integrity protections.</p>
+        </div>
+
+        <!-- 4 Steps Workflow -->
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <h3>Submit &amp; Quote</h3>
+            <p>Upload your manuscript (.docx) and target journal guidelines. Receive a fixed, all-inclusive quote and confirmed delivery timeline within 24 hours.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <h3>Precision Editing</h3>
+            <p>Rigorous line editing and APA 7th formatting. Every citation is verified, heading levels standardized, and tracked changes meticulously documented.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <h3>QA &amp; Delivery</h3>
+            <p>Receive two deliverables: a tracked-changes .docx showing every editorial adjustment, plus a pristine, submission-ready clean .docx and compiled PDF.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <h3>14-Day Revisions</h3>
+            <p>Review the files with complete peace of mind. Request up to two rounds of minor scope revisions, returned promptly within 2 business days.</p>
+          </div>
+        </div>
+
+        <!-- Terms Strip -->
+        <div class="terms-strip">
+          <div class="term-col">
+            <h4>⏱ Turnaround SLA</h4>
+            <p>Express turnaround within 48 business hours (≤10,000 words) or Standard 5 business days. If a committed deadline is ever missed, you receive a 10% fee reduction.</p>
+          </div>
+          <div class="term-col">
+            <h4>🔄 14-Day Revision Policy</h4>
+            <p>14 calendar days from delivery to request up to two rounds of minor scope refinements (formatting adjustments, style tweaks) returned in 2 business days.</p>
+          </div>
+          <div class="term-col">
+            <h4>⚖️ Academic Ethics Clause</h4>
+            <p>Strictly editing, formatting, and coaching. No ghostwriting or content generation. You retain complete authorship, intellectual property, and academic integrity.</p>
+          </div>
+          <div class="term-col">
+            <h4>🔒 Confidentiality &amp; Privacy</h4>
+            <p>Your research is 100% confidential. Files are stored in private storage, accessed exclusively by me, and permanently deleted 30 days after project completion. NDA available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Credibility Section -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="eyebrow">Why APA Expertise Matters</p>
+            <h2>Eliminate desk rejection before reviewers even read your findings</h2>
+            <p>Journal editors and dissertation committees review hundreds of submissions each term. When citations are mangled, headings inconsistent, or reference formats outdated, reviewers form an immediate negative impression of the study's methodological rigor.</p>
+            <p>With deep specialization in APA 7th edition standards, I transform rough manuscripts into publication-ready documents that command reviewer respect. In APA 7, student papers omit running heads while professional manuscripts require them; reference lists require DOIs as URLs and accommodate up to 20 authors. Precision in these details signals scholarly authority.</p>
+          </div>
+          <div class="lead-magnet-card">
+            <span class="badge-magnet">Free Lead Magnet</span>
+            <h3>The APA 7th Quick-Reference QA Checklist</h3>
+            <p>The exact internal QA checklist used to inspect every manuscript before journal submission.</p>
+            <ul>
+              <li>Running head rules for student vs. professional manuscripts</li>
+              <li>20+ author reference formatting &amp; ellipsis rules</li>
+              <li>Publisher location removal &amp; DOI-as-URL format</li>
+              <li>Heading hierarchy (Levels 1–5) and spacing rules</li>
+              <li>Table and figure formatting, titles, and note syntax</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Request Free Checklist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessible FAQ Accordion (Objective 4.5) -->
+    <section id="faq" class="section">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions researchers ask before hiring an editor</h2>
+          <p>Transparent answers on ethics, turnaround schedules, revision guarantees, and confidentiality.</p>
+        </div>
+
+        <div class="faq-wrap">
+          <details class="faq-item">
+            <summary>Do you write or rewrite content for clients?<span class="faq-icon">+</span></summary>
+            <div class="faq-body">
+              <p>No — my services are strictly editing, formatting, and coaching. You remain the sole author of every idea, argument, and finding. This protects your academic integrity, dissertation requirements, and institutional code of conduct. Full details are defined in our Ethics Statement.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is your turnaround time, and can you handle urgent deadlines?<span class="faq-icon">+</span></summary>
+            <div class="faq-body">
+              <p>Standard turnaround is 5 business days for manuscripts up to 15,000 words. For tight conference or journal submission deadlines, Express 48-business-hour turnaround is available for manuscripts up to 10,000 words. The timeline clock starts once complete, final files are received.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How does the 14-day revision policy work?<span class="faq-icon">+</span></summary>
+            <div class="faq-body">
+              <p>You have 14 calendar days following delivery to review the work and submit up to two rounds of minor revisions tied to the original scope (such as formatting adjustments, style preferences, or editorial oversights). Revisions are returned within 2 business days.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do you protect my research confidentiality and unpublished findings?<span class="faq-icon">+</span></summary>
+            <div class="faq-body">
+              <p>Your research, data, and draft manuscripts are treated with strict confidentiality. Files are stored in private encrypted storage, accessible solely by me, and are permanently purged 30 days after project completion. A formal non-disclosure agreement (NDA) is available upon request prior to file upload.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What file formats do you accept, and what will I receive back?<span class="faq-icon">+</span></summary>
+            <div class="faq-body">
+              <p>Please submit editable Microsoft Word (.docx) files so that Microsoft Word Track Changes can record all modifications. PDFs are accepted as visual reference copies only. Upon delivery, you receive both a tracked-changes .docx showing every edit and a clean, submission-ready .docx, plus a formatted PDF.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How does quoting and payment work?<span class="faq-icon">+</span></summary>
+            <div class="faq-body">
+              <p>Formatting is quoted per page or reference count; line editing is quoted per word based on an initial sample assessment. You receive a transparent, fixed-price quote upfront with zero hidden fees. Once quoted, payments are processed securely via Stripe within your Client Portal.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serverless Contact Form (Objective 4.5) -->
+    <section id="contact" class="section section-alt">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <p class="eyebrow">Get a Quote</p>
+          <h2>Tell me about your manuscript timeline</h2>
+          <p>Submit your project details below. You will receive a fixed quote and guaranteed completion date within 24 hours.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form" novalidate>
+            <!-- Web3Forms public access key placeholder (safe by design) -->
+            <input type="hidden" name="access_key" value="YOUR-PUBLIC-ACCESS-KEY">
+            <!-- Anti-spam honeypot (bots fill, humans never see) -->
+            <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name">Full Name *</label>
+                <input class="input" id="cf-name" name="name" autocomplete="name" required placeholder="Dr. Jane Smith">
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Academic or Institutional Email *</label>
+                <input class="input" type="email" id="cf-email" name="email" autocomplete="email" required placeholder="jsmith@university.edu">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-service">Service Needed *</label>
+              <select class="select" id="cf-service" name="service">
+                <option value="APA 7th Formatting">APA 7th Manuscript Formatting</option>
+                <option value="Comprehensive Academic Editing">Comprehensive Academic Editing</option>
+                <option value="Literature Review Structuring">Literature Review Structuring</option>
+                <option value="Research Coaching">Research Coaching</option>
+                <option value="Checklist Request">Free APA 7 QA Checklist Request</option>
+                <option value="Not sure yet">Not sure yet / Custom inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cf-message">Tell me about your manuscript &amp; timeline *</label>
+              <textarea class="textarea" id="cf-message" name="message" rows="5" required placeholder="Document type, word or page count, target journal or committee deadline, and specific formatting requirements..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="wordmark">Manuscript<span>Ready</span></a>
+          <p>Professional APA 7th manuscript formatting and academic line editing for doctoral candidates, researchers, and faculty.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#process">Process &amp; SLA</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/login">Client Portal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Standards &amp; Terms</h4>
+            <ul>
+              <li><a href="#process">Turnaround SLA</a></li>
+              <li><a href="#process">14-Day Revision Policy</a></li>
+              <li><a href="#process">Academic Ethics Statement</a></li>
+              <li><a href="#process">Privacy &amp; Data Retention</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ManuscriptReady. All rights reserved. Strictly no ghostwriting.</p>
+        <p>Protected by 14-day revision guarantee and confidentiality protocol.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lean Vanilla Interaction Script (Zero Frameworks) -->
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>
