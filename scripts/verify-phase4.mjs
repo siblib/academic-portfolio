@@ -46,10 +46,9 @@ if (indexExists) {
   check('Service cards have .excluded scope boundaries', (html.match(/class="excluded"/g) || []).length === 4);
   check('Service cards have .pricing-basis notes', (html.match(/class="pricing-basis"/g) || []).length === 4);
 
-  // 6. Interactive Before/After slider
   check('Slider container .ba-slider present', html.includes('class="ba-slider"'));
   check('Slider native range input present', html.includes('class="ba-range"'));
-  check('Slider before/after image markup present', html.includes('case-a-before.webp') && html.includes('case-a-after.webp'));
+  check('Slider before/after image markup present', /case-a-before(-1200)?\.webp/.test(html) && /case-a-after(-1200)?\.webp/.test(html));
 
   // 7. Three case studies
   const caseCards = (html.match(/<article class="case-study-card">/g) || []).length;

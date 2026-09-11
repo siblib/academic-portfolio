@@ -101,7 +101,7 @@ section[id] {
 }
 
 .nav-desktop a {
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-sm);
   color: var(--text-secondary);
   padding: 0.5rem 0;
@@ -324,7 +324,7 @@ section[id] {
 .service-card .one-liner {
   font-style: italic;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 600;
   margin-top: var(--space-2);
 }
 

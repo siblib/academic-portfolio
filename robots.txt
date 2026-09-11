@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /new-project
+
+Sitemap: https://academic-portfolio-alpha-eosin.vercel.app/sitemap.xml
