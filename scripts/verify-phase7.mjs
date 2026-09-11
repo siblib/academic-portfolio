@@ -186,10 +186,10 @@ if (fs.existsSync(indexPath)) {
         const parsed = JSON.parse(match[1]);
         if (parsed['@type'] === 'ProfessionalService') {
           hasProfService = true;
-          if (parsed.hasOfferCatalog && parsed.hasOfferCatalog.itemListElement?.length === 4) {
-            pass('JSON-LD ProfessionalService schema valid with 4 core service offers');
+          if (parsed.hasOfferCatalog && parsed.hasOfferCatalog.itemListElement?.length >= 4) {
+            pass(`JSON-LD ProfessionalService schema valid with ${parsed.hasOfferCatalog.itemListElement.length} service offers`);
           } else {
-            fail('JSON-LD ProfessionalService missing 4 service catalog offers');
+            fail('JSON-LD ProfessionalService missing service catalog offers');
           }
         } else if (parsed['@type'] === 'FAQPage') {
           hasFAQ = true;

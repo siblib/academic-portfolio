@@ -39,12 +39,12 @@ if (indexExists) {
   check('Hero eyebrow & H1 present', html.includes('Your manuscript, journal-submission ready.'));
   check('Metrics dl present with 4 proof cards', (html.match(/<div class="metric">/g) || []).length === 4);
 
-  // 5. Four service cards
+  // 5. Service cards (expanded from 4 to 8 in Phase 1.75)
   const serviceCards = (html.match(/<article class="service-card">/g) || []).length;
-  check('Four service cards present', serviceCards === 4, `found ${serviceCards}`);
-  check('Service cards have .includes lists', (html.match(/class="includes"/g) || []).length === 4);
-  check('Service cards have .excluded scope boundaries', (html.match(/class="excluded"/g) || []).length === 4);
-  check('Service cards have .pricing-basis notes', (html.match(/class="pricing-basis"/g) || []).length === 4);
+  check('Service cards present (at least 4)', serviceCards >= 4, `found ${serviceCards}`);
+  check('Service cards have .includes lists', (html.match(/class="includes"/g) || []).length >= 4);
+  check('Service cards have .excluded scope boundaries', (html.match(/class="excluded"/g) || []).length >= 4);
+  check('Service cards have .pricing-basis notes', (html.match(/class="pricing-basis"/g) || []).length >= 4);
 
   check('Slider container .ba-slider present', html.includes('class="ba-slider"'));
   check('Slider native range input present', html.includes('class="ba-range"'));

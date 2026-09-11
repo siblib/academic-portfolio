@@ -62,6 +62,10 @@ if (projectsTbody) {
     editing: 'Comprehensive Editing',
     lit_review: 'Lit Review Structuring',
     coaching: 'Research Coaching',
+    drafting: 'Developmental Drafting Support',
+    data_analysis: 'Data Analysis (Quant & Qual)',
+    figures: 'Figure, Table & Graph Development',
+    defense_deck: 'Defense Presentation Deck',
   };
 
   const STATUS_META = {

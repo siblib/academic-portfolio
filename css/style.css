@@ -24,6 +24,10 @@
   --info: #2563EB;
   --info-soft: #DBEAFE;
 
+  /* WhatsApp System (Objective 1.75.5) */
+  --wa: #25D366;         /* glyph, hover accents — never a text fill */
+  --wa-strong: #075E54;  /* fills: white text ≈ 7.6:1, passes AA */
+
   /* Semantic (feeds status badges + case study annotations) */
   --warning: #D97706;
   --warning-soft: #FEF3C7;
@@ -186,6 +190,20 @@ a:hover {
 }
 .btn-ghost:hover {
   text-decoration: underline;
+}
+.btn-whatsapp {
+  background: var(--wa-strong);
+  color: #ffffff;
+  border-color: transparent;
+}
+.btn-whatsapp:hover {
+  background: #05443C;
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn-whatsapp svg {
+  fill: var(--wa);
+  flex-shrink: 0;
 }
 
 /* Inputs & Form elements */

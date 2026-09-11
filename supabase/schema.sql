@@ -20,7 +20,8 @@ create table if not exists public.projects (
   user_id        uuid not null references auth.users(id) on delete cascade,
   title          text not null,
   service_type   text not null check (service_type in
-                   ('formatting','editing','lit_review','coaching')),
+                   ('formatting','editing','lit_review','coaching',
+                    'drafting','data_analysis','figures','defense_deck')),
   status         text not null default 'submitted' check (status in
                    ('submitted','under_review','editing','awaiting_payment','completed')),
   word_count     int,

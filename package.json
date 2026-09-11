@@ -4,8 +4,8 @@
   "private": true,
   "description": "ManuscriptReady — Academic Editing & APA 7th Formatting",
   "scripts": {
-    "test": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs && node scripts/verify-phase5.mjs && node scripts/verify-phase6.mjs && node scripts/verify-phase7.mjs",
-    "verify": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs && node scripts/verify-phase5.mjs && node scripts/verify-phase6.mjs && node scripts/verify-phase7.mjs"
+    "test": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs && node scripts/verify-phase5.mjs && node scripts/verify-phase6.mjs && node scripts/verify-phase7.mjs && node scripts/verify-phase175.mjs",
+    "verify": "node scripts/verify-setup.js && node scripts/verify-phase4.mjs && node scripts/verify-phase5.mjs && node scripts/verify-phase6.mjs && node scripts/verify-phase7.mjs && node scripts/verify-phase175.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.4"

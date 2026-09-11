@@ -608,6 +608,118 @@ section[id] {
 }
 
 /* --------------------------------------------------------------------------
+   Featured Deliverables Gallery (Objective 1.75.2)
+   -------------------------------------------------------------------------- */
+.gallery-intro {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: var(--space-2) auto var(--space-8);
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.deliverable-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deliverable-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.deliverable-media {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deliverable-media picture,
+.deliverable-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-xs);
+  object-fit: contain;
+}
+
+.deliverable-content {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.deliverable-card h3 {
+  font-size: var(--text-lg);
+  color: var(--navy-900);
+  margin-bottom: var(--space-2);
+  line-height: 1.3;
+}
+
+.deliverable-card .deliverable-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+
+.deliverable-provenance {
+  font-family: var(--font-serif);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+  font-style: italic;
+}
+
+.deliverable-data {
+  margin-top: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+}
+
+.deliverable-data summary {
+  font-weight: 600;
+  color: var(--navy-900);
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.deliverable-data-body {
+  padding-top: var(--space-2);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Process Steps & Terms Strip (Objective 1.3 / Phase 4)
    -------------------------------------------------------------------------- */
 .process-grid {
@@ -699,8 +811,103 @@ section[id] {
 }
 
 /* --------------------------------------------------------------------------
-   About & Lead Magnet Section
+   About & Bio Section (Objective 1.75.4)
    -------------------------------------------------------------------------- */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-10);
+  align-items: center;
+  margin-bottom: var(--space-12);
+}
+
+.bio-photo {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border);
+  background: var(--navy-900);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-photo picture,
+.bio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bio-monogram {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy-900);
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 900;
+  user-select: none;
+}
+
+.bio-content h2 {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+  font-size: clamp(1.5rem, 3vw, var(--text-3xl));
+}
+
+.bio-content p {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
+}
+
+.bio-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding: 0;
+}
+
+.bio-facts li {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.bio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: var(--space-6);
+  }
+  .bio-photo {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -894,6 +1101,21 @@ section[id] {
 .form-status[data-type="error"] {
   color: var(--danger);
   font-weight: 600;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.wa-note {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+  line-height: 1.4;
 }
 
 /* --------------------------------------------------------------------------
